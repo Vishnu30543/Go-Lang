@@ -1,0 +1,16 @@
+PUT / UPDATE Request Steps (Go)
+
+PUT / UPDATE Request Steps (Go)
+Create struct data (the data you want to update).
+Convert struct → JSON using json.Marshal().
+Convert JSON → Reader using strings.NewReader().
+Create request using http.NewRequest(http.MethodPut, url, body).
+Set header → Content-Type: application/json.
+Create client → http.Client{}.
+Send request → client.Do(req).
+Read response → ioutil.ReadAll(res.Body).
+Print status and response.
+Close response → defer res.Body.Close()
+
+In Go, only GET and POST have direct functions;
+     for PUT, PATCH, DELETE we use http.NewRequest() with client.Do()
